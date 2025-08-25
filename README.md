@@ -1,30 +1,41 @@
-# Projeto Transfer Learning - Classificação Binária (Cats vs Dogs)
+# Projeto Transfer Learning - Cats vs Dogs 🐱🐶
 
-Este projeto utiliza Transfer Learning com o modelo MobileNetV2 para classificar imagens de gatos e cachorros usando o dataset do TensorFlow Datasets.
+Este projeto utiliza Transfer Learning com a arquitetura MobileNetV2 para classificar imagens de gatos e cachorros usando o dataset [Cats vs Dogs](https://www.tensorflow.org/datasets/catalog/cats_vs_dogs) do TensorFlow Datasets.
 
-## Principais etapas
+## Estrutura do Projeto
 
-- **Carregamento do dataset**: Utiliza o `cats_vs_dogs` do TensorFlow Datasets, dividido em treino, validação e teste.
-- **Pré-processamento**: Redimensiona as imagens para 224x224 pixels e normaliza para o intervalo esperado pelo MobileNetV2.
-- **Modelo**: Utiliza MobileNetV2 pré-treinado, com uma camada final `Dense(1, activation='sigmoid')` para classificação binária.
-- **Treinamento**: Usa `binary_crossentropy` como função de perda e EarlyStopping para evitar overfitting.
-- **Ajuste fino**: Descongela parte das camadas do modelo base para melhorar a performance.
-- **Avaliação**: Mostra acurácia no conjunto de teste e gráficos de perda/acurácia.
+- **Pré-processamento:** Redimensionamento, aumento de dados e normalização das imagens.
+- **Modelo:** MobileNetV2 pré-treinado, com ajuste fino (fine-tuning) nas últimas camadas.
+- **Treinamento:** EarlyStopping para evitar overfitting.
+- **Avaliação:** Matriz de confusão, relatório de classificação e visualização de resultados.
+- **Exportação:** Salva o modelo em formato Keras (`.h5`).
 
-## Como executar
+## Como Executar
 
 1. Instale as dependências:
-    ```bash
-    pip install tensorflow tensorflow-datasets matplotlib
+    ```sh
+    pip install tensorflow tensorflow-datasets scikit-learn matplotlib pillow
     ```
-2. Execute o notebook `Transfer_Learning_Binary.ipynb` no Google Colab ou Jupyter Notebook.
 
-## Observações
+2. Execute o notebook [`Transfer_Learning_test_1.ipynb`](c:\Users\Luis Gustavo\Downloads\Transfer_Learning_test_1.ipynb) passo a passo.
 
-- O projeto pode ser adaptado para outros datasets binários.
-- Para usar outras imagens, basta ajustar o carregamento e o pré-processamento.
+3. O modelo será treinado, avaliado e salvo como `cats_vs_dogs_model.h5`.
+
+## Resultados
+
+- Acurácia de teste: ~99%
+- Matriz de confusão e relatório de classificação disponíveis no notebook.
+- Visualização das previsões do modelo em imagens do conjunto de teste.
+
+
+## Referências
+
+- [Documentação TensorFlow](https://www.tensorflow.org/)
+- [Dataset Cats vs Dogs](https://www.tensorflow.org/datasets/catalog/cats_vs_dogs)
 
 ---
 
-**Autor:** Luis Gustavo  
-**Base:** [Kaggle Cats vs Dogs](https://www.tensorflow.org/datasets/catalog/cats_vs_dogs)
+**Autor:** **Luis Gustavo (Goni)** 
+**Contato:** <a href="https://wwwlinkedin.com/in/luisamaral2506/">
+        <img src="https://img.shields.io/badge/LinkedIn-blue?style=flat-square&logo=linkedin" alt="LinkedIn">
+
